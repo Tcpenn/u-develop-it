@@ -1,5 +1,4 @@
 //dependencies
-const { application } = require('express');
 const express = require('express');
 const mysql = require('mysql2');
 const inputCheck = require('./utils/inputCheck');
