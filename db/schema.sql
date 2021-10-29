@@ -1,13 +1,16 @@
+/*Drop logic*/
 DROP TABLE IF EXISTS candidates;
 DROP TABLE IF EXISTS parties;
 DROP TABLE IF EXISTS voters;
 
+/* Creates parties table */
 CREATE TABLE parties (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     description TEXT
 );
 
+/* Creates candidates table */
 CREATE TABLE candidates (
   id INTEGER AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
@@ -17,6 +20,7 @@ CREATE TABLE candidates (
   CONSTRAINT fk_party FOREIGN KEY (party_id) REFERENCES parties(id) ON DELETE SET NULL
 );
 
+/* Creates voters table */
 CREATE TABLE voters (
   id INTEGER AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
